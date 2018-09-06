@@ -8,10 +8,12 @@ import (
 	"github.com/spf13/viper"
 )
 
+// Config config struct
 type Config struct {
 	Name string
 }
 
+// Init to init config package
 func Init(cfg string) error {
 	c := Config{
 		Name: cfg,

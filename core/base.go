@@ -1,11 +1,11 @@
-package base
+package core
 
 import (
-	"github.com/ofree8/service-base/config"
+	"github.com/ofree8/service/config"
 )
 
 func init() {
-	if err := config.Init("service-base"); err != nil {
+	if err := config.Init(""); err != nil {
 
 	}
 }

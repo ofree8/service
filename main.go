@@ -1,11 +1,18 @@
-package base
+package service
 
 import (
-	"github.com/ofree8/service-base/config"
+	"fmt"
+	"os"
+
+	"github.com/ofree8/service/config"
 )
 
-func main() {
-	if err := config.Init("Service-base"); err != nil {
 
+func init() {
+	config.Init("")
+	if _, err := os.Open("config"); err != nil {
+		fmt.Println("no conf dir found")
+		return
 	}
+	fmt.Println("!!!!!!!get output")
 }
