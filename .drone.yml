@@ -52,9 +52,9 @@ pipeline:
             branch: master
             event: [push, pull_request]
     docker: #第二阶段
+        image: plugins/docker
         registry: docker.finogeeks.club
         repo: docker.finogeeks.club/business/xxx-knowledge
-        image: plugins/docker
         default_tags: true
         when: 
             event: tag  # step的条件化执行，仅当 tag 事件时执行这个阶段   
@@ -63,7 +63,6 @@ pipeline:
         channel: dev
         when:
             branch: master
-
     publish:
         when:
             event: tag
